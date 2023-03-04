@@ -1,0 +1,65 @@
+:root {
+    --primary : antiquewhite;
+    --secondary : pink;
+    --title : black;
+    --text : blue;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.root{
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary);
+}
+
+header{
+    height: 20%;
+    background-color: aqua;
+}
+
+main{
+    height: 70%;
+    background-color: yellow;
+}
+
+footer{
+    height: 10%;
+    background-color: blueviolet;
+}
+
+.navbar{
+    height: 25%;
+    width: 100%;
+    background-color: var(--secondary);
+}
+
+.title{
+    height: 30%;
+    width: inherit;
+    font-size: 10vmin;
+    text-align: center;
+}
+
+.searchbar {
+    height: 10%;
+    width: inherit;
+    align-items: center;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar input {
+    height: 50%;
+    width: 40%;
+    background-color: var(--secondary);
+}
+
