@@ -138,6 +138,8 @@ main {
 #moreResults{
     margin-top: 5%;
     width: 100%;
+    display: none;
+    cursor: pointer;
 }
 
 footer{

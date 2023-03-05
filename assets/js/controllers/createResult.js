@@ -1,17 +1,4 @@
-export function createResult(data){
-    let results = data['output']['results'];
-    
-    // show page number hyperlink
-
-
-    // create the individual result
-    let currPage = 1;
-
-    let rangeStart = (currPage-1)*10;
-    let rangeEnd = rangeStart + 10;
-    let pageWiseResults = results.slice(rangeStart, rangeEnd);
-
-    
+function addResults(pageWiseResults) {
     pageWiseResults.forEach(res => {
         let {a, c, d, t} = res;
         let result = ` <div class="result">
@@ -25,4 +12,28 @@ export function createResult(data){
                     </div>`;
         $(result).insertBefore('#moreResults');
     });
+}
+
+export function createResult(data){
+    let results = data['output']['results'];
+    let totalResults = results.length;
+
+    let currPage = 1 ;
+    let rangeStart = (currPage-1)*10;
+    let rangeEnd = rangeStart + 10;
+    let pageWiseResults = results.slice(rangeStart, rangeEnd);
+    addResults(pageWiseResults);
+
+    if(rangeEnd<=totalResults){
+        $('#moreResults').css("display", "block");;
+    }
+
+    $('#moreResults').click(()=>{
+        currPage = currPage + 1;
+        rangeStart = (currPage-1)*10;
+        rangeEnd = rangeStart + 10;
+        pageWiseResults = results.slice(rangeStart, rangeEnd);
+        addResults(pageWiseResults);
+    })
+
 }
